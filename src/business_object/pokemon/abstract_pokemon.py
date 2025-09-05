@@ -1,9 +1,9 @@
 import copy
+from abc import ABC, abstractmethod
 
 from business_object.statistic import Statistic
 
 from abc import ABC, abstractmethod
-
 
 class AbstractPokemon(ABC):
     """
@@ -22,22 +22,27 @@ class AbstractPokemon(ABC):
         self._stat_current: Statistic = stat_current
         self._level: int = level
         self._name: str = name
-        self._type: str = type_pk
 
-    # -------------------------------------------------------------------------
-    # Methods
-    # -------------------------------------------------------------------------
-    @abstractmethod
+    @abstractmethod  # decorator that defines a method as abstract
+    def get_pokemon_attack_coef(self) -> int:
+        pass
 
-    def get_pokemon_attack_coef(self) -> float:
+        # -------------------------------------------------------------------------
+        # Methods
+        # -------------------------------------------------------------------------
+
+        # def get_pokemon_attack_coef(self) -> float:
         """
         Compute a damage multiplier related to the pokemon type.
 
         Returns :
             float : the multiplier
         """
-        pass
-    
+
+        # raise Exception("unknown type")
+
+        # return multiplier
+
     def level_up(self) -> None:
         """
         Increase the level by one
