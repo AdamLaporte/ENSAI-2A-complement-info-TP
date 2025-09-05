@@ -1,5 +1,5 @@
-from business_object.pokemon.pokemon import Pokemon
-from business_object.statistic import Statistic
+from pokemon import Pokemon
+from statistic import Statistic
 
 # Create statistics for the following pokemon
 stats_pk1 = Statistic(100, 40, 10, 10, 10, 10)
